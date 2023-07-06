@@ -16,6 +16,7 @@ void PrintLabeledDebugString(const char* label, const char* toPrint)
 struct My_vertex
 {
 	float xyzw[4];
+
 };
 
 // TODO: Part 2B 

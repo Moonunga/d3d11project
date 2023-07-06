@@ -13,7 +13,7 @@
 // TODO: Part 4A 
 #define GATEWARE_ENABLE_INPUT
 // With what we want & what we don't defined we can include the API
-#include "../gateware-main/Gateware.h"
+#include "gateware-main/Gateware.h"
 
 #include "FileIntoString.h"
 #include "renderer.h" // example rendering code (not Gateware code!)
