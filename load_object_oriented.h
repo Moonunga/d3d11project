@@ -12,11 +12,19 @@ class Model {
 	// Shader variables needed by this model. 
 	GW::MATH::GMATRIXF world;// TODO: Add matrix/light/etc vars..
 	// TODO: API Rendering vars here (unique to this model)
+
 	// Vertex Buffer
+	Microsoft::WRL::ComPtr<ID3D11Buffer>		vertexBuffer;
 	// Index Buffer
+	Microsoft::WRL::ComPtr<ID3D11Buffer>		indexBuffer;
 	// Pipeline/State Objects
+	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;
 	// Uniform/ShaderVariable Buffer
+	Microsoft::WRL::ComPtr<ID3D11Buffer>		constantbuffer;
 	// Vertex/Pixel Shaders
+	Microsoft::WRL::ComPtr<ID3D11VertexShader>	vertexShader;
+	Microsoft::WRL::ComPtr<ID3D11PixelShader>	pixelShader;
+
 public:
 	inline void SetName(std::string modelName) {
 		name = modelName;
@@ -28,8 +36,12 @@ public:
 		// if this succeeds "cpuModel" should now contain all the model's info
 		return cpuModel.Parse(h2bPath);
 	}
-	bool UploadModelData2GPU(/*specific API device for loading*/) {
+	bool UploadModelData2GPU(ID3D11Device* creator) {
 		// TODO: Use chosen API to upload this model's graphics data to GPU
+
+		D3D11_SUBRESOURCE_DATA bData = { cpuModel.vertices.data(), 0, 0};
+		CD3D11_BUFFER_DESC bDesc(sizeof(H2B::VERTEX) * cpuModel.vertices.size(), D3D11_BIND_VERTEX_BUFFER);
+		APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, vertexBuffer.GetAddressOf());
 	}
 	bool DrawModel(/*specific API command list or context*/) {
 		// TODO: Use chosen API to setup the pipeline for this model and draw it

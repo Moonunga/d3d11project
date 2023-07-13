@@ -21,7 +21,7 @@ set(SOURCE_CODE
 	FileIntoString.h
 	XTime.h
 	XTime.cpp
-	load_data_oriented.h
+	load_data_oriented.h 
 	load_object_oriented.h
 	h2bParser.h
 )

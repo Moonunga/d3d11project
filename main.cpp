@@ -14,11 +14,11 @@
 #define GATEWARE_ENABLE_INPUT
 // With what we want & what we don't defined we can include the API
 #include "gateware-main/Gateware.h"
-
-#include "FileIntoString.h"
-#include "renderer.h" // example rendering code (not Gateware code!)
 #include "load_data_oriented.h"
 #include "load_object_oriented.h"
+#include "FileIntoString.h"
+#include "renderer.h" // example rendering code (not Gateware code!)
+
 
 // open some namespaces to compact the code a bit
 using namespace GW;
@@ -40,8 +40,8 @@ int main()
 	std::cout << std::endl; // leave a gap to make the difference easier to see.
 
 	Level_Objects objectOrientedLoader;
-	objectOrientedLoader.LoadLevel("../GameLevel.txt", "../Models", log);
-
+	bool result = objectOrientedLoader.LoadLevel("../GameLevel.txt", "../Models", log);
+ 
 	log.Log("End Program.");
 
 //#pragma region assignment1codes

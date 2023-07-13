@@ -1302,3 +1302,655 @@
 [Thu Jul  6 23:26:27 2023] ThreadID[15416]	[MESSAGE]	Game Level File Reading Complete.
 [Thu Jul  6 23:26:27 2023] ThreadID[15416]	[EVENT]	GAME LEVEL WAS LOADED TO CPU [OBJECT ORIENTED]
 [Thu Jul  6 23:26:27 2023] ThreadID[15416]	End Program.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	Start Program.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[EVENT]	LOADING GAME LEVEL [DATA ORIENTED]
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Reading Game Level Text File.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Archery_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.604200 Y 0.000000 Z -1.266500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Barracks_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.949600 Y 0.000000 Z 9.892100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Farm_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.812300 Y 0.000000 Z 3.161400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Farm_SecondAge_Level3_Wheat
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.838800 Y 0.000000 Z 3.153600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.837600 Y -0.000000 Z 8.649200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level2
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -3.299200 Y 0.000000 Z 5.352400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.447600 Y 0.000000 Z 6.104400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Market_FirstAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.707600 Y 0.000000 Z 8.114300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.401600 Y 0.000000 Z 14.985800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 17.352301 Y 0.000000 Z -7.168500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Port_FirstAge_Level1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 8.331700 Y 0.000000 Z -11.760400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Storage_SecondAge_Level1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.740000 Y 0.000000 Z 2.124800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Temple_FirstAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.698300 Y -0.000000 Z 3.751400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: TowerHouse_SecondAge
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.971600 Y 0.000000 Z 4.040300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: TownCenter_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -0.238600 Y 0.000000 Z 3.749700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.196100 Y 0.000000 Z 8.313600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.307900 Y 0.000000 Z 5.875300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Windmill_SecondAge
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.370700 Y 0.000000 Z 0.943100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Wonder_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.212000 Y 0.000000 Z -0.948500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Plane
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.000000 Y 0.000000 Z 0.000000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.772699 Y 0.000000 Z -12.489200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -13.052100 Y 0.000000 Z -9.251900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 9.715900 Y 0.000000 Z -16.437799
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.256100 Y 0.000000 Z 17.336901
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.804701 Y 0.000000 Z -0.055900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -11.483200 Y 0.000000 Z -16.902201
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 5.404500 Y 0.000000 Z 16.178101
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.771100 Y 0.000000 Z -17.244699
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -16.805799 Y 0.000000 Z 13.665200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.806101 Y 0.000000 Z 9.064700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.076000 Y 0.000000 Z -13.477500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 15.667400 Y 0.000000 Z -16.797100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -9.217200 Y 0.000000 Z 16.955299
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.898400 Y 0.000000 Z -4.665900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 5.090200 Y 0.000000 Z -17.068100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -0.598600 Y 0.000000 Z -16.961000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.009
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.767800 Y 0.000000 Z 0.043500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.010
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 13.975100 Y -0.000000 Z 5.459700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.011
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.597100 Y -0.000000 Z 13.966900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.009
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -14.070200 Y 0.000000 Z 4.852300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.012
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -12.924300 Y -0.000000 Z 8.296200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.013
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.375100 Y -0.000000 Z 15.343600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.014
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 10.955100 Y -0.000000 Z 13.162700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.015
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 14.176200 Y -0.000000 Z -4.018800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.990000 Y -0.000000 Z 9.811200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.088300 Y 0.357500 Z 10.112500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level1.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.797500 Y -0.000000 Z 8.691400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level1.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.785700 Y -0.000000 Z 8.705700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.684600 Y 0.000000 Z 6.363000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.316200 Y 0.000000 Z 3.513100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.333400 Y 0.000000 Z -1.160400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.342800 Y 0.000000 Z 1.205200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Farm_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.812300 Y 0.000000 Z 3.161400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.196100 Y 0.000000 Z 8.313600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.307900 Y 0.000000 Z 5.875300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Plane.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.000000 Y 0.000000 Z 0.000000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.316200 Y 0.000000 Z 3.513100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.333400 Y 0.000000 Z -1.160400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.342800 Y 0.000000 Z 1.205200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.009
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.467600 Y 0.000000 Z 3.526200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.010
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.450400 Y 0.000000 Z -1.147400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.441000 Y 0.000000 Z 1.218200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.011
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.407800 Y 0.000000 Z 8.357900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.475900 Y 0.000000 Z 5.888300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Barracks_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.949600 Y 0.000000 Z 9.892100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Wonder_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.212000 Y 0.000000 Z -0.948500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.990000 Y -0.000000 Z 9.811200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.012
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.088300 Y 0.357500 Z 10.112500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.013
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.840800 Y -0.000000 Z -4.378800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.014
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.237500 Y 0.357500 Z -4.077500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Barracks_SecondAge_Level3.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.800400 Y 0.000000 Z -4.297800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.105900 Y 0.000000 Z -0.614700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.252900 Y 0.000000 Z -3.683400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.656200 Y 0.000000 Z -3.950900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Market_FirstAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -0.956300 Y 0.000000 Z 6.448200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Game Level File Reading Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Archery_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Barracks_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Farm_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Farm_SecondAge_Level3_Wheat.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Market_FirstAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Plane.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Port_FirstAge_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Storage_SecondAge_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Temple_FirstAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/TowerHouse_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/TownCenter_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Windmill_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Wonder_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[EVENT]	GAME LEVEL WAS LOADED TO CPU [DATA ORIENTED]
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[EVENT]	LOADING GAME LEVEL [OBJECT ORIENTED]
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Reading Game Level Text File.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Archery_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.604200 Y 0.000000 Z -1.266500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Archery_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Barracks_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.949600 Y 0.000000 Z 9.892100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Barracks_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Farm_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.812300 Y 0.000000 Z 3.161400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Farm_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Farm_SecondAge_Level3_Wheat
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.838800 Y 0.000000 Z 3.153600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Farm_SecondAge_Level3_Wheat.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.837600 Y -0.000000 Z 8.649200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level2
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -3.299200 Y 0.000000 Z 5.352400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.447600 Y 0.000000 Z 6.104400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Market_FirstAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.707600 Y 0.000000 Z 8.114300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Market_FirstAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.401600 Y 0.000000 Z 14.985800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 17.352301 Y 0.000000 Z -7.168500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Port_FirstAge_Level1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 8.331700 Y 0.000000 Z -11.760400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Port_FirstAge_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Storage_SecondAge_Level1
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.740000 Y 0.000000 Z 2.124800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Storage_SecondAge_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Temple_FirstAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.698300 Y -0.000000 Z 3.751400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Temple_FirstAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: TowerHouse_SecondAge
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.971600 Y 0.000000 Z 4.040300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/TowerHouse_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: TownCenter_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -0.238600 Y 0.000000 Z 3.749700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/TownCenter_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.196100 Y 0.000000 Z 8.313600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.307900 Y 0.000000 Z 5.875300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Windmill_SecondAge
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.370700 Y 0.000000 Z 0.943100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Windmill_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Wonder_SecondAge_Level3
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.212000 Y 0.000000 Z -0.948500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Wonder_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Plane
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.000000 Y 0.000000 Z 0.000000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Plane.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.772699 Y 0.000000 Z -12.489200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -13.052100 Y 0.000000 Z -9.251900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 9.715900 Y 0.000000 Z -16.437799
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.256100 Y 0.000000 Z 17.336901
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.804701 Y 0.000000 Z -0.055900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -11.483200 Y 0.000000 Z -16.902201
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 5.404500 Y 0.000000 Z 16.178101
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.771100 Y 0.000000 Z -17.244699
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -16.805799 Y 0.000000 Z 13.665200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 16.806101 Y 0.000000 Z 9.064700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.076000 Y 0.000000 Z -13.477500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 15.667400 Y 0.000000 Z -16.797100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -9.217200 Y 0.000000 Z 16.955299
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.898400 Y 0.000000 Z -4.665900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 5.090200 Y 0.000000 Z -17.068100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -0.598600 Y 0.000000 Z -16.961000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.009
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -15.767800 Y 0.000000 Z 0.043500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.010
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 13.975100 Y -0.000000 Z 5.459700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.011
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.597100 Y -0.000000 Z 13.966900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_2.009
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -14.070200 Y 0.000000 Z 4.852300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_2.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.012
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -12.924300 Y -0.000000 Z 8.296200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.013
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.375100 Y -0.000000 Z 15.343600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.014
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 10.955100 Y -0.000000 Z 13.162700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Mountain_Group_1.015
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 14.176200 Y -0.000000 Z -4.018800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Mountain_Group_1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.990000 Y -0.000000 Z 9.811200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.088300 Y 0.357500 Z 10.112500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level1.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.797500 Y -0.000000 Z 8.691400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level1.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.785700 Y -0.000000 Z 8.705700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level1.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Houses_SecondAge_3_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 2.684600 Y 0.000000 Z 6.363000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Houses_SecondAge_3_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.316200 Y 0.000000 Z 3.513100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.333400 Y 0.000000 Z -1.160400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.342800 Y 0.000000 Z 1.205200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Farm_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 4.812300 Y 0.000000 Z 3.161400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Farm_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.196100 Y 0.000000 Z 8.313600
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.307900 Y 0.000000 Z 5.875300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Plane.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.000000 Y 0.000000 Z 0.000000
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Plane.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.316200 Y 0.000000 Z 3.513100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.333400 Y 0.000000 Z -1.160400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.342800 Y 0.000000 Z 1.205200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.009
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.467600 Y 0.000000 Z 3.526200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.010
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.450400 Y 0.000000 Z -1.147400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.004
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.441000 Y 0.000000 Z 1.218200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.011
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.407800 Y 0.000000 Z 8.357900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.005
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.475900 Y 0.000000 Z 5.888300
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Barracks_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.949600 Y 0.000000 Z 9.892100
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Barracks_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Wonder_SecondAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.212000 Y 0.000000 Z -0.948500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Wonder_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.003
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.990000 Y -0.000000 Z 9.811200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.012
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.088300 Y 0.357500 Z 10.112500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.013
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.840800 Y -0.000000 Z -4.378800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WallTowers_SecondAge.014
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -2.237500 Y 0.357500 Z -4.077500
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WallTowers_SecondAge.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Barracks_SecondAge_Level3.002
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 0.800400 Y 0.000000 Z -4.297800
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Barracks_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.006
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 3.105900 Y 0.000000 Z -0.614700
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.007
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X 6.252900 Y 0.000000 Z -3.683400
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: WatchTower_SecondAge_Level3.008
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -4.656200 Y 0.000000 Z -3.950900
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/WatchTower_SecondAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Model Detected: Market_FirstAge_Level3.001
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[INFO]	Location: X -0.956300 Y 0.000000 Z 6.448200
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Begin Importing .H2B File Data.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[ERROR]	H2B Not Found: ../Models/Market_FirstAge_Level3.h2b
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[WARNING]	Loading will continue but model(s) are missing.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Importing of .H2B File Data Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[MESSAGE]	Game Level File Reading Complete.
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	[EVENT]	GAME LEVEL WAS LOADED TO CPU [OBJECT ORIENTED]
+[Wed Jul 12 23:05:15 2023] ThreadID[28292]	End Program.

@@ -2,7 +2,6 @@
 #pragma comment(lib, "d3dcompiler.lib") //needed for runtime shader compilation. Consider compiling shaders before runtime 
 #include"XTime.h"
 
-
 void PrintLabeledDebugString(const char* label, const char* toPrint)
 {
 	std::cout << label << toPrint << std::endl;
@@ -32,16 +31,17 @@ struct Shader_Vars
 
 class Renderer
 {
+
 	// proxy handles
 	GW::SYSTEM::GWindow win;
 	GW::GRAPHICS::GDirectX11Surface d3d;
 	// what we need at a minimum to draw a triangle
-	Microsoft::WRL::ComPtr<ID3D11Buffer>		vertexBuffer;
+
+	/*Microsoft::WRL::ComPtr<ID3D11Buffer>		vertexBuffer;
 	Microsoft::WRL::ComPtr<ID3D11VertexShader>	vertexShader;
 	Microsoft::WRL::ComPtr<ID3D11PixelShader>	pixelShader;
-	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;
+	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;*/
 
-	
 
 	// TODO: Part 2A 
 	GW::MATH::GMATRIXF world_matrix;
@@ -65,9 +65,13 @@ class Renderer
 	XTime timer;
 	float totaltime;
 
+	Level_Objects myLevel; // all models
+
 public:
 	Renderer(GW::SYSTEM::GWindow _win, GW::GRAPHICS::GDirectX11Surface _d3d)
 	{
+		
+
 		timer.Restart();
 		//proxy
 		matrixProxy.Create();
@@ -76,21 +80,16 @@ public:
 
 		win = _win;
 		d3d = _d3d;
-		// TODO: Part 2A 
-		InitializeMatrix();
-		// TODO: Part 2C 
-		shader_vars.Sworld_matrix = world_matrix;
-		// TODO: Part 2G 
-		shader_vars.Sview_matrix = view_matrix;
-		// TODO: Part 3A 
-		shader_vars.Sprojection_matrix = projection_matrix;
-		// TODO: Part 3B 
-		// TODO: Part 3C 
-		// TODO: Part 4A 
 		
-
+		InitializeMatrix();
+		
+		shader_vars.Sworld_matrix = world_matrix;
+		
+		shader_vars.Sview_matrix = view_matrix;
+		
+		shader_vars.Sprojection_matrix = projection_matrix;
+		
 		InitializeGraphics();
-
 
 	}
 
@@ -114,50 +113,50 @@ private:
 	void InitializeMatrix()
 	{
 
-#pragma region grid Matrices initial
-		// world_matrix initialing ground ---------> index 0
-		GW::MATH::GMATRIXF temp;
-
-		temp = GW::MATH::GIdentityMatrixF;
-		matrixProxy.RotateXGlobalF(temp, 1.57, temp);
-		GW::MATH::GVECTORF v = { 0,-0.5f,0,0 };
-		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-		gridMatrices.push_back(temp);
-
-		// world_matrix initialing ceiling ---------> index 1
-		temp = GW::MATH::GIdentityMatrixF;
-		matrixProxy.RotateXGlobalF(temp, 1.57, temp);
-		v = { 0,+0.5f,0,0 };
-		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-		gridMatrices.push_back(temp);
-
-		// world_matrix initialing back ---------> index 2
-		temp = GW::MATH::GIdentityMatrixF;
-		 v = { 0,0,+0.5f,0 };
-		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-		gridMatrices.push_back(temp);
-
-		// world_matrix initialing front ---------> index 3
-		temp = GW::MATH::GIdentityMatrixF;
-		 v = { 0,0,-0.5f,0 };
-		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-		gridMatrices.push_back(temp);
-
-		// world_matrix initialing right ---------> index 4
-		temp = GW::MATH::GIdentityMatrixF;
-		matrixProxy.RotateYGlobalF(temp, 1.57, temp);
-		 v = { +0.5f,0,0,0 };
-		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-		gridMatrices.push_back(temp);
-
-		// world_matrix initialing left ---------> index 5
-		temp = GW::MATH::GIdentityMatrixF;
-		matrixProxy.RotateYGlobalF(temp, 1.57, temp);
-		 v = { -0.5f,0,0,0 };
-		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-		gridMatrices.push_back(temp);
-
-#pragma endregion
+//#pragma region grid Matrices initial
+//		// world_matrix initialing ground ---------> index 0
+//		GW::MATH::GMATRIXF temp;
+//
+//		temp = GW::MATH::GIdentityMatrixF;
+//		matrixProxy.RotateXGlobalF(temp, 1.57, temp);
+//		GW::MATH::GVECTORF v = { 0,-0.5f,0,0 };
+//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
+//		gridMatrices.push_back(temp);
+//
+//		// world_matrix initialing ceiling ---------> index 1
+//		temp = GW::MATH::GIdentityMatrixF;
+//		matrixProxy.RotateXGlobalF(temp, 1.57, temp);
+//		v = { 0,+0.5f,0,0 };
+//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
+//		gridMatrices.push_back(temp);
+//
+//		// world_matrix initialing back ---------> index 2
+//		temp = GW::MATH::GIdentityMatrixF;
+//		 v = { 0,0,+0.5f,0 };
+//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
+//		gridMatrices.push_back(temp);
+//
+//		// world_matrix initialing front ---------> index 3
+//		temp = GW::MATH::GIdentityMatrixF;
+//		 v = { 0,0,-0.5f,0 };
+//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
+//		gridMatrices.push_back(temp);
+//
+//		// world_matrix initialing right ---------> index 4
+//		temp = GW::MATH::GIdentityMatrixF;
+//		matrixProxy.RotateYGlobalF(temp, 1.57, temp);
+//		 v = { +0.5f,0,0,0 };
+//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
+//		gridMatrices.push_back(temp);
+//
+//		// world_matrix initialing left ---------> index 5
+//		temp = GW::MATH::GIdentityMatrixF;
+//		matrixProxy.RotateYGlobalF(temp, 1.57, temp);
+//		 v = { -0.5f,0,0,0 };
+//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
+//		gridMatrices.push_back(temp);
+//
+//#pragma endregion
 
 		world_matrix = gridMatrices[0];
 		// view_matrix initialing
@@ -183,19 +182,6 @@ private:
 
 	void InitializeVertexBuffer(ID3D11Device* creator)
 	{
-		// TODO: Part 1B 
-		// TODO: Part 1C 
-		// TODO: Part 1D 
-
-		// triangle 
-		/*float verts[] = {
-			0,   0.5f, 0 ,1.0f,
-			0.5f, -0.5f, 0 ,1.0f,
-			0.5f, -0.5f, 0 ,1.0f,
-			-0.5f, -0.5f, 0 ,1.0f,
-			-0.5f, -0.5f, 0 ,1.0f,
-			0,   0.5f, 0 ,1.0f
-		};*/
 
 		My_vertex* verts = Creategird();
 
