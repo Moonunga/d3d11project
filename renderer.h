@@ -11,69 +11,67 @@ void PrintLabeledDebugString(const char* label, const char* toPrint)
 #endif
 }
 
-// TODO: Part 1C 
-struct My_vertex
+enum constantMode
 {
-	float xyzw[4];
-
+	scene,
+	mesh
 };
 
-// TODO: Part 2B 
-
-struct Shader_Vars
+struct SceneData
 {
-	GW::MATH::GMATRIXF Sworld_matrix;
-	GW::MATH::GMATRIXF Sview_matrix;
-	GW::MATH::GMATRIXF Sprojection_matrix;
+	GW::MATH::GMATRIXF viewMatrix, projectionMatrix;
+	GW::MATH::GVECTORF sunDirection, sunColor;
 };
 
-// TODO: Part 2G 
+struct MeshData
+{
+	GW::MATH::GMATRIXF worldMatrix;
+	//OBJ_ATTRIBUTES material;
+};
 
 class Renderer
 {
+	// handle level data
+	Level_Data& levelHandle;
 
 	// proxy handles
 	GW::SYSTEM::GWindow win;
 	GW::GRAPHICS::GDirectX11Surface d3d;
-	// what we need at a minimum to draw a triangle
 
-	/*Microsoft::WRL::ComPtr<ID3D11Buffer>		vertexBuffer;
+	Microsoft::WRL::ComPtr<ID3D11Buffer>		vertexBuffer;
 	Microsoft::WRL::ComPtr<ID3D11VertexShader>	vertexShader;
 	Microsoft::WRL::ComPtr<ID3D11PixelShader>	pixelShader;
-	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;*/
+	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;
+	Microsoft::WRL::ComPtr<ID3D11Buffer>		indexBuffer;
+	Microsoft::WRL::ComPtr<ID3D11Buffer>		constantbuffer[2];
 
 
-	// TODO: Part 2A 
 	GW::MATH::GMATRIXF world_matrix;
-	// TODO: Part 2C 
-	Shader_Vars shader_vars;
-	// TODO: Part 2D 
-	Microsoft::WRL::ComPtr<ID3D11Buffer> constantbuffer;
-	// TODO: Part 2G 
 	GW::MATH::GMATRIXF view_matrix;
 	GW::MATH::GMATRIXF camera_matrix;
-	// TODO: Part 3A 
 	GW::MATH::GMATRIXF projection_matrix;
-	// TODO: Part 3C 
-	std::vector<GW::MATH::GMATRIXF> gridMatrices;
-	// TODO: Part 4A 
+	GW::MATH::GVECTORF sun_Direction;
+	GW::MATH::GVECTORF sun_Color;
+
+	//proxy
 	GW::MATH::GMatrix matrixProxy;
 	GW::INPUT::GInput GinputProxy;
 	GW::INPUT::GController GControllerProxy;
 
+	SceneData scene_Data;
+	MeshData  mesh_Data;
 	// timer
 	XTime timer;
-	float totaltime;
+	float deltatime;
 
-	Level_Objects myLevel; // all models
 
 public:
-	Renderer(GW::SYSTEM::GWindow _win, GW::GRAPHICS::GDirectX11Surface _d3d)
+	Renderer(GW::SYSTEM::GWindow _win, GW::GRAPHICS::GDirectX11Surface _d3d ,
+				Level_Data& _handle) : levelHandle(_handle) //constuctor intializer
 	{
-		
-
+		//xtime 
 		timer.Restart();
-		//proxy
+		//proxy create
 		matrixProxy.Create();
 		GinputProxy.Create(_win);
 		GControllerProxy.Create();
@@ -82,83 +80,26 @@ public:
 		d3d = _d3d;
 		
 		InitializeMatrix();
-		
-		shader_vars.Sworld_matrix = world_matrix;
-		
-		shader_vars.Sview_matrix = view_matrix;
-		
-		shader_vars.Sprojection_matrix = projection_matrix;
+		InitializeSun();
+
+		scene_Data.viewMatrix = view_matrix;
+		scene_Data.projectionMatrix = projection_matrix;
+		scene_Data.sunColor = sun_Color;
+		scene_Data.sunDirection = sun_Direction;
+
+		mesh_Data.worldMatrix = world_matrix;
+		//mesh_Data.material = FSLogo_materials[0].attrib;
 		
 		InitializeGraphics();
-
 	}
 
 
 private:
 	//Constructor helper functions 
-	void InitializeGraphics()
-	{
-		ID3D11Device* creator;
-		d3d.GetDevice((void**)&creator);
-
-		InitializeVertexBuffer(creator);
-		//TODO: Part 2D 
-		InitializeConstantBuffer(creator);
-
-		InitializePipeline(creator);
-		// free temporary handle
-		creator->Release();
-	}
-
 	void InitializeMatrix()
 	{
+		world_matrix = GW::MATH::GIdentityMatrixF;
 
-//#pragma region grid Matrices initial
-//		// world_matrix initialing ground ---------> index 0
-//		GW::MATH::GMATRIXF temp;
-//
-//		temp = GW::MATH::GIdentityMatrixF;
-//		matrixProxy.RotateXGlobalF(temp, 1.57, temp);
-//		GW::MATH::GVECTORF v = { 0,-0.5f,0,0 };
-//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-//		gridMatrices.push_back(temp);
-//
-//		// world_matrix initialing ceiling ---------> index 1
-//		temp = GW::MATH::GIdentityMatrixF;
-//		matrixProxy.RotateXGlobalF(temp, 1.57, temp);
-//		v = { 0,+0.5f,0,0 };
-//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-//		gridMatrices.push_back(temp);
-//
-//		// world_matrix initialing back ---------> index 2
-//		temp = GW::MATH::GIdentityMatrixF;
-//		 v = { 0,0,+0.5f,0 };
-//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-//		gridMatrices.push_back(temp);
-//
-//		// world_matrix initialing front ---------> index 3
-//		temp = GW::MATH::GIdentityMatrixF;
-//		 v = { 0,0,-0.5f,0 };
-//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-//		gridMatrices.push_back(temp);
-//
-//		// world_matrix initialing right ---------> index 4
-//		temp = GW::MATH::GIdentityMatrixF;
-//		matrixProxy.RotateYGlobalF(temp, 1.57, temp);
-//		 v = { +0.5f,0,0,0 };
-//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-//		gridMatrices.push_back(temp);
-//
-//		// world_matrix initialing left ---------> index 5
-//		temp = GW::MATH::GIdentityMatrixF;
-//		matrixProxy.RotateYGlobalF(temp, 1.57, temp);
-//		 v = { -0.5f,0,0,0 };
-//		GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
-//		gridMatrices.push_back(temp);
-//
-//#pragma endregion
-
-		world_matrix = gridMatrices[0];
 		// view_matrix initialing
 		view_matrix = GW::MATH::GIdentityMatrixF;
 		GW::MATH::GVECTORF v1 = { 0.25f,-0.125f,-0.25f,0 };
@@ -168,8 +109,10 @@ private:
 		GW::MATH::GMatrix::InverseF(view_matrix , view_matrix);*/ //don't know why this not working
 		//matrixProxy--->LookAtLHF(v1, v2, v2 ,view_matrix); this way you can find the parameter
 		matrixProxy.LookAtLHF(v1, v2, v3, view_matrix);
+							//( myposition ,target, which vector is Up)
+
 		matrixProxy.InverseF(view_matrix, camera_matrix);
-		//( myposition ,target, which vector is Up)
+					
 
 		// projection matrix
 		float aspectratio = 0 ;
@@ -180,78 +123,29 @@ private:
 		//xmmatrixperspectiveFovLH(field of view , aspect ratio , near plane, far plane , out_matrix);
 	}
 
+	void InitializeSun()
+	{
+		sun_Color = { 0.9f ,0.9f ,1.0f ,1.0f };
+		sun_Direction = { -1, -1, +2, 1 };
+	}
+
+	void InitializeGraphics()
+	{
+		ID3D11Device* creator;
+		d3d.GetDevice((void**)&creator);
+
+		InitializeVertexBuffer(creator);
+		InitializeIndexBuffer(creator);
+		InitializeConstantBuffer(creator);
+		InitializePipeline(creator);
+
+		// free temporary handle
+		creator->Release();
+	}
+
 	void InitializeVertexBuffer(ID3D11Device* creator)
 	{
-
-		My_vertex* verts = Creategird();
-
-		CreateVertexBuffer(creator, &verts[0], sizeof(float) * 4 * 104);
-	}
-
-	My_vertex* Creategird()
-	{
-		My_vertex* grid = new My_vertex[104];
-
-		float x1 = -0.5f;
-		float y1 = +0.5f;
-
-		for (size_t i = 0; i < 52; i+=2)
-		{
-			grid[i].xyzw[0] = x1;
-			grid[i].xyzw[1] = y1;
-			grid[i].xyzw[2] = 0;
-			grid[i].xyzw[3] = 1;
-			
-			y1 *= -1;
-			grid[i+1].xyzw[0] = x1;
-			grid[i+1].xyzw[1] = y1;
-			grid[i+1].xyzw[3] = 1;
-			grid[i+1].xyzw[2] = 0;
-
-			x1 += 0.04;
-			y1 *= -1;
-		}
-
-
-
-		x1 = -0.5f;
-		y1 = +0.5f;
-
-		for (size_t i = 0; i < 52; i+=2)
-		{
-			grid[i + 52].xyzw[0] = x1;
-			grid[i + 52].xyzw[1] = y1;
-			grid[i + 52].xyzw[2] = 0;
-			grid[i + 52].xyzw[3] = 1;
-
-			
-			x1 *= -1;
-
-			grid[i + 53].xyzw[0] = x1;
-			grid[i + 53].xyzw[1] = y1;
-			grid[i + 53].xyzw[2] = 0;
-			grid[i + 53].xyzw[3] = 1;
-
-			y1 -= 0.04;
-			x1 *= -1;
-		}
-
-		return grid;
-	}
-
-	void InitializeConstantBuffer(ID3D11Device* creator)
-	{
-
-		Shader_Vars shader_V = shader_vars;
-
-		CreateConstantBuffer(creator, &shader_V, sizeof(Shader_Vars) );
-	}
-
-	void CreateConstantBuffer(ID3D11Device* creator, const void* data, unsigned int sizeInBytes)
-	{
-		D3D11_SUBRESOURCE_DATA bData = { data, 0, 0 };
-		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_CONSTANT_BUFFER,D3D11_USAGE_DYNAMIC,D3D11_CPU_ACCESS_WRITE);
-	 	APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, constantbuffer.GetAddressOf());
+		CreateVertexBuffer(creator, levelHandle.levelVertices.data() , sizeof(H2B::VERTEX) * levelHandle.levelVertices.size());
 	}
 
 	void CreateVertexBuffer(ID3D11Device* creator, const void* data, unsigned int sizeInBytes)
@@ -260,6 +154,38 @@ private:
 		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_VERTEX_BUFFER);
 		APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, vertexBuffer.GetAddressOf());
 	}
+
+	void InitializeIndexBuffer(ID3D11Device* creator)
+	{
+		CreateIndexBuffer(creator, levelHandle.levelIndices.data(), sizeof(unsigned int) * levelHandle.levelIndices.size());
+	}
+
+	void CreateIndexBuffer(ID3D11Device* creator, const void* data, unsigned int sizeInBytes)
+	{
+		D3D11_SUBRESOURCE_DATA bData = { data, 0, 0 };
+		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_INDEX_BUFFER);
+		creator->CreateBuffer(&bDesc, &bData, indexBuffer.GetAddressOf());
+	}
+
+
+	void InitializeConstantBuffer(ID3D11Device* creator)
+	{
+
+		SceneData scene = scene_Data;
+		CreateConstantBuffer(creator, &scene, sizeof(SceneData), constantMode::scene );
+		MeshData mesh = mesh_Data;
+		CreateConstantBuffer(creator, &scene, sizeof(MeshData), constantMode::mesh);
+
+	}
+
+	void CreateConstantBuffer(ID3D11Device* creator, const void* data, unsigned int sizeInBytes , constantMode mode)
+	{
+		D3D11_SUBRESOURCE_DATA bData = { data, 0, 0 };
+		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_CONSTANT_BUFFER,D3D11_USAGE_DYNAMIC,D3D11_CPU_ACCESS_WRITE);
+	 	APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, constantbuffer[mode].GetAddressOf());
+	}
+
+	
 
 	void InitializePipeline(ID3D11Device* creator)
 	{
@@ -327,9 +253,8 @@ private:
 
 	void CreateVertexInputLayout(ID3D11Device* creator, Microsoft::WRL::ComPtr<ID3DBlob>& vsBlob)
 	{
-		// TODO: Part 1C 
 
-		D3D11_INPUT_ELEMENT_DESC attributes[1];
+		D3D11_INPUT_ELEMENT_DESC attributes[3];
 
 		attributes[0].SemanticName = "POSITION";
 		attributes[0].SemanticIndex = 0;
@@ -339,25 +264,27 @@ private:
 		attributes[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
 		attributes[0].InstanceDataStepRate = 0;
 
+		//textureUV input setting
+		attributes[1].SemanticName = "TEXTUREUV";
+		attributes[1].SemanticIndex = 0;
+		attributes[1].Format = DXGI_FORMAT_R32G32B32_FLOAT;
+		attributes[1].InputSlot = 0;
+		attributes[1].AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT;
+		attributes[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		attributes[1].InstanceDataStepRate = 0;
+
+		//textureUV input setting
+		attributes[2].SemanticName = "NORMAL";
+		attributes[2].SemanticIndex = 0;
+		attributes[2].Format = DXGI_FORMAT_R32G32B32_FLOAT;
+		attributes[2].InputSlot = 0;
+		attributes[2].AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT;
+		attributes[2].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		attributes[2].InstanceDataStepRate = 0;
+
 		creator->CreateInputLayout(attributes, ARRAYSIZE(attributes),
 			vsBlob->GetBufferPointer(), vsBlob->GetBufferSize(),
 			vertexFormat.GetAddressOf());
-
-
-		// original float2 vertex
-		/*D3D11_INPUT_ELEMENT_DESC attributes[1];
-
-		attributes[0].SemanticName = "POSITION";
-		attributes[0].SemanticIndex = 0;
-		attributes[0].Format = DXGI_FORMAT_R32G32_FLOAT;
-		attributes[0].InputSlot = 0;
-		attributes[0].AlignedByteOffset = D3D11_APPEND_ALIGNED_ELEMENT;
-		attributes[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
-		attributes[0].InstanceDataStepRate = 0;
-
-		creator->CreateInputLayout(attributes, ARRAYSIZE(attributes),
-			vsBlob->GetBufferPointer(), vsBlob->GetBufferSize(),
-			vertexFormat.GetAddressOf());*/
 
 	}
 
@@ -368,20 +295,16 @@ public:
 		
 		PipelineHandles curHandles = GetCurrentPipelineHandles();
 		SetUpPipeline(curHandles);
-		// TODO: Part 1B 
-		// TODO: Part 1D 
-		// TODO: Part 3D 
-		//for (size_t i = 0; i < 1; i++)
-		for (size_t i = 0; i < gridMatrices.size(); i++)
-		{
+		
+		//for loop here
 			D3D11_MAPPED_SUBRESOURCE GPUbuffer;
-			curHandles.context->Map(constantbuffer.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
-			//*((GW::MATH::GMATRIXF*)(GPUbuffer.pData)) = gridMatrices[i];
-			shader_vars.Sworld_matrix = gridMatrices[i];
-			memcpy(GPUbuffer.pData, &shader_vars, sizeof(shader_vars));
-			curHandles.context->Unmap(constantbuffer.Get(), 0);
-			curHandles.context->Draw(104, 0);
-		}
+			//curHandles.context->Map(constantbuffer[constantMode::scene].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
+			////*((GW::MATH::GMATRIXF*)(GPUbuffer.pData)) = gridMatrices[i];
+			//shader_vars.Sworld_matrix = gridMatrices[i];
+			//memcpy(GPUbuffer.pData, &shader_vars, sizeof(shader_vars));
+			//curHandles.context->Unmap(constantbuffer.Get(), 0);
+			curHandles.context->DrawIndexed(levelHandle.levelIndices.size(), 0, 0);
+		
 		
 		
 		ReleasePipelineHandles(curHandles);
@@ -395,10 +318,10 @@ public:
 	{
 		
 		timer.Signal();
-		totaltime = timer.Delta();
+		deltatime = timer.Delta();
 		float camera_speed = 0.3f;
 
-		float perframeSpeed = camera_speed * totaltime;
+		float perframeSpeed = camera_speed * deltatime;
 
 		// up down
 		float space_state = 0;
@@ -449,7 +372,7 @@ public:
 		UINT windowWidth;
 		win.GetWidth(windowWidth);
 
-		float rotateSpeed = 3.14f * totaltime * 7;
+		float rotateSpeed = 3.14f * deltatime * 7;
 
 		float total_pitch = 1.134f * ydelta / windowHeight * rotateSpeed;
 							//(fov in radian)
@@ -475,7 +398,7 @@ public:
 		}
 		
 
-		matrixProxy.InverseF(camera_matrix, shader_vars.Sview_matrix);
+		matrixProxy.InverseF(camera_matrix, scene_Data.viewMatrix);
 	}
 
 	
@@ -507,8 +430,9 @@ private:
 		SetRenderTargets(handles);
 		SetVertexBuffers(handles);
 		SetShaders(handles);
-		//TODO: Part 2E 
-		handles.context->VSSetConstantBuffers(0,1, constantbuffer.GetAddressOf());
+		SetIndexBuffers(handles);
+
+		handles.context->VSSetConstantBuffers(0,1, constantbuffer->GetAddressOf());
 		handles.context->IASetInputLayout(vertexFormat.Get());
 		handles.context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST); //TODO: Part 1B 
 	}
@@ -519,10 +443,15 @@ private:
 		handles.context->OMSetRenderTargets(ARRAYSIZE(views), views, handles.depthStencil);
 	}
 
+	void SetIndexBuffers(PipelineHandles handles)
+	{
+		ID3D11Buffer* buffs = indexBuffer.Get();
+		handles.context->IASetIndexBuffer(buffs, DXGI_FORMAT_R32_UINT, 0);
+	}
+
 	void SetVertexBuffers(PipelineHandles handles)
 	{
-		// TODO: Part 1C 
-		const UINT strides[] = { sizeof(float) * 4 };
+		const UINT strides[] = { sizeof(float) * 9 };
 		const UINT offsets[] = { 0 };
 		ID3D11Buffer* const buffs[] = { vertexBuffer.Get() };
 		handles.context->IASetVertexBuffers(0, ARRAYSIZE(buffs), buffs, strides, offsets);
