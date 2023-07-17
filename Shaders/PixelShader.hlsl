@@ -1,12 +1,44 @@
 // an ultra simple hlsl pixel shader
 
-struct InputVertex
+struct OBJ_ATTRIBUTES
 {
-	float4 pos : SV_POSITION;
+    float3 Kd; // diffuse reflectivity
+    float d; // dissolve (transparency) 
+    float3 Ks; // specular reflectivity
+    float Ns; // specular exponent
+    float3 Ka; // ambient reflectivity
+    float sharpness; // local reflection map sharpness
+    float3 Tf; // transmission filter
+    float Ni; // optical density (index of refraction)
+    float3 Ke; // emissive reflectivity
+    uint illum; // illumination model
+};
+
+cbuffer SceneBuffer : register(b0)
+{
+    float4x4 view_matrix;
+    float4x4 projection_matrix;
+    float4 sunDirection;
+    float4 sunColor;
+};
+
+cbuffer MeshBuffer : register(b1)
+{
+    float4x4 world_matrix;
+    OBJ_ATTRIBUTES obj_attributes;
 };
 
 
-float4 main() : SV_TARGET
+struct InputVertex
 {
-	return float4(0.0f, 0.0f, 1.0f, 1.0f); // TODO: Part 1A (optional) 
+    float4 xyzw : SV_POSITION;
+    float3 posW : WORLD;
+    float3 normW : NORMALW;
+};
+
+
+float4 main(InputVertex input) : SV_TARGET
+{
+    //return float4(input.normW, 1);
+    return float4(obj_attributes.Kd, 0); 
 }

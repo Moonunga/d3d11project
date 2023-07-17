@@ -1,36 +1,61 @@
 // an ultra simple hlsl vertex shader
 #pragma pack_matrix(row_major) 
-// TODO: Part 1C
+
+
 struct OutputVertex
 {
-	float4 xyzw : SV_POSITION;
+    float4 xyzw : SV_POSITION;
+    float3 posW : WORLD;
+    float3 normW : NORMALW;
 };
 
 struct InputVertex
 {
-	float4 xyzw : POSITION;
+    float3 xyz : POSITION;
+    float3 uvw : TEXTUREUV;
+    float3 nrm : NORMAL;
 };
 
-// TODO: Part 2B 
-cbuffer Shader_Vars : register(b0)
+struct OBJ_ATTRIBUTES
 {
-	float4x4 world_matrix;
-	float4x4 view_matrix;
-	float4x4 projection_matrix;
+    float3 Kd; // diffuse reflectivity
+    float d; // dissolve (transparency) 
+    float3 Ks; // specular reflectivity
+    float Ns; // specular exponent
+    float3 Ka; // ambient reflectivity
+    float sharpness; // local reflection map sharpness
+    float3 Tf; // transmission filter
+    float Ni; // optical density (index of refraction)
+    float3 Ke; // emissive reflectivity
+    uint illum; // illumination model
 };
 
-// TODO: Part 2F 
-// TODO: Part 2G 
-// TODO: Part 3B 
 
-OutputVertex main(InputVertex input )
+cbuffer SceneBuffer : register(b0)
 {
-	OutputVertex output = (OutputVertex)0;
-	output.xyzw = input.xyzw;
+    float4x4 view_matrix;
+    float4x4 projection_matrix;
+    float4 sunDirection;
+    float4 sunColor;
+};
 
-	output.xyzw = mul(output.xyzw , world_matrix);
-	output.xyzw = mul(output.xyzw, view_matrix);
-	output.xyzw = mul(output.xyzw, projection_matrix);
- 	return output;
+cbuffer MeshBuffer : register(b1)
+{
+    float4x4 world_matrix;
+    OBJ_ATTRIBUTES obj_attributes;
+};
 
+OutputVertex main(InputVertex input)
+{
+    OutputVertex output = (OutputVertex) 0;
+    output.xyzw = float4(input.xyz, 1);
+    
+    output.xyzw = mul(output.xyzw, world_matrix);
+    output.posW = output.xyzw.xyz;
+    output.xyzw = mul(output.xyzw, view_matrix);
+    output.xyzw = mul(output.xyzw, projection_matrix);
+    
+    output.normW = mul(input.nrm, (float3x3) (world_matrix));
+    
+    return output;
 }

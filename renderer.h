@@ -26,7 +26,7 @@ struct SceneData
 struct MeshData
 {
 	GW::MATH::GMATRIXF worldMatrix;
-	//OBJ_ATTRIBUTES material;
+	H2B::MATERIAL material;
 };
 
 class Renderer
@@ -34,7 +34,6 @@ class Renderer
 	// handle level data
 	Level_Data& levelHandle;
 
-	// proxy handles
 	GW::SYSTEM::GWindow win;
 	GW::GRAPHICS::GDirectX11Surface d3d;
 
@@ -44,7 +43,7 @@ class Renderer
 	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;
 	Microsoft::WRL::ComPtr<ID3D11Buffer>		indexBuffer;
 	Microsoft::WRL::ComPtr<ID3D11Buffer>		constantbuffer[2];
-
+	
 
 	GW::MATH::GMATRIXF world_matrix;
 	GW::MATH::GMATRIXF view_matrix;
@@ -182,7 +181,7 @@ private:
 	{
 		D3D11_SUBRESOURCE_DATA bData = { data, 0, 0 };
 		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_CONSTANT_BUFFER,D3D11_USAGE_DYNAMIC,D3D11_CPU_ACCESS_WRITE);
-	 	APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, constantbuffer[mode].GetAddressOf());
+	 	APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, constantbuffer[(int)mode].GetAddressOf());
 	}
 
 	
@@ -296,14 +295,21 @@ public:
 		PipelineHandles curHandles = GetCurrentPipelineHandles();
 		SetUpPipeline(curHandles);
 		
-		//for loop here
-			D3D11_MAPPED_SUBRESOURCE GPUbuffer;
-			//curHandles.context->Map(constantbuffer[constantMode::scene].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
-			////*((GW::MATH::GMATRIXF*)(GPUbuffer.pData)) = gridMatrices[i];
-			//shader_vars.Sworld_matrix = gridMatrices[i];
-			//memcpy(GPUbuffer.pData, &shader_vars, sizeof(shader_vars));
-			//curHandles.context->Unmap(constantbuffer.Get(), 0);
-			curHandles.context->DrawIndexed(levelHandle.levelIndices.size(), 0, 0);
+		for (size_t i = 0; i < levelHandle.levelModels.size(); i++)
+		{
+			for (size_t j = 0; j < levelHandle.levelMeshes.size(); j++)
+			{
+				D3D11_MAPPED_SUBRESOURCE GPUbuffer;
+				curHandles.context->Map(constantbuffer[mesh].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
+				//*((GW::MATH::GMATRIXF*)(GPUbuffer.pData)) = gridMatrices[i];
+				//matrixProxy--->IdentityF(mesh_Data.worldMatrix); // change world matrix each here
+				mesh_Data.material.attrib = levelHandle.levelMaterials[levelHandle.levelMeshes[j].materialIndex].attrib;
+				memcpy(GPUbuffer.pData, constantbuffer[mesh].GetAddressOf(), sizeof(constantbuffer[mesh]));
+				curHandles.context->Unmap(constantbuffer[mesh].Get(), 0);
+				curHandles.context->DrawIndexedInstanced(levelHandle.levelMeshes[j].drawInfo.indexCount, levelHandle.levelMeshes[j].drawInfo.indexOffset, 0);
+			}
+		}
+			
 		
 		
 		
@@ -312,8 +318,6 @@ public:
 		
 	}
 
-
-	// TODO: Part 4B 
 	void UpdateCamera()
 	{
 		
@@ -432,7 +436,8 @@ private:
 		SetShaders(handles);
 		SetIndexBuffers(handles);
 
-		handles.context->VSSetConstantBuffers(0,1, constantbuffer->GetAddressOf());
+		handles.context->VSSetConstantBuffers(0,2, constantbuffer->GetAddressOf());
+		handles.context->PSSetConstantBuffers(0, 2, constantbuffer->GetAddressOf());
 		handles.context->IASetInputLayout(vertexFormat.Get());
 		handles.context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST); //TODO: Part 1B 
 	}

@@ -48,7 +48,7 @@ int main()
 			// instantiate and load level data for use by renderer
 			GLog log; log.Create("logOutput2.txt");
 			Level_Data myLevel;
-			bool result = myLevel.LoadLevel("../GameLevel2.txt","../h2bParser.h",log.Relinquish());
+			bool result = myLevel.LoadLevel("../GameLevel2.txt","../Models2",log); // gives me true
 
 			Renderer renderer(win, d3d11 , myLevel);
 			while (+win.ProcessWindowEvents())
