@@ -17,6 +17,7 @@ enum constantMode
 	mesh
 };
 
+
 struct SceneData
 {
 	GW::MATH::GMATRIXF viewMatrix, projectionMatrix;
@@ -26,7 +27,7 @@ struct SceneData
 struct MeshData
 {
 	GW::MATH::GMATRIXF worldMatrix;
-	H2B::MATERIAL material;
+	H2B::ATTRIBUTES material;
 };
 
 class Renderer
@@ -43,7 +44,7 @@ class Renderer
 	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;
 	Microsoft::WRL::ComPtr<ID3D11Buffer>		indexBuffer;
 	Microsoft::WRL::ComPtr<ID3D11Buffer>		constantbuffer[2];
-	
+
 
 	GW::MATH::GMATRIXF world_matrix;
 	GW::MATH::GMATRIXF view_matrix;
@@ -65,8 +66,8 @@ class Renderer
 
 
 public:
-	Renderer(GW::SYSTEM::GWindow _win, GW::GRAPHICS::GDirectX11Surface _d3d ,
-				Level_Data& _handle) : levelHandle(_handle) //constuctor intializer
+	Renderer(GW::SYSTEM::GWindow _win, GW::GRAPHICS::GDirectX11Surface _d3d,
+		Level_Data& _handle) : levelHandle(_handle) //constuctor intializer
 	{
 		//xtime 
 		timer.Restart();
@@ -77,7 +78,7 @@ public:
 
 		win = _win;
 		d3d = _d3d;
-		
+
 		InitializeMatrix();
 		InitializeSun();
 
@@ -88,7 +89,7 @@ public:
 
 		mesh_Data.worldMatrix = world_matrix;
 		//mesh_Data.material = FSLogo_materials[0].attrib;
-		
+
 		InitializeGraphics();
 	}
 
@@ -101,20 +102,20 @@ private:
 
 		// view_matrix initialing
 		view_matrix = GW::MATH::GIdentityMatrixF;
-		GW::MATH::GVECTORF v1 = { 0.25f,-0.125f,-0.25f,0 };
-		GW::MATH::GVECTORF v2 = { 0,-0.5,0,0 };
+		GW::MATH::GVECTORF v1 = { 0,0,-15.0f,0 };
+		GW::MATH::GVECTORF v2 = { 0,3,0,0 };
 		GW::MATH::GVECTORF v3 = { 0,1,0,0 };
 		/*GW::MATH::GMatrix::TranslateGlobalF(view_matrix, v1, view_matrix);
 		GW::MATH::GMatrix::InverseF(view_matrix , view_matrix);*/ //don't know why this not working
 		//matrixProxy--->LookAtLHF(v1, v2, v2 ,view_matrix); this way you can find the parameter
 		matrixProxy.LookAtLHF(v1, v2, v3, view_matrix);
-							//( myposition ,target, which vector is Up)
+		//( myposition ,target, which vector is Up)
 
 		matrixProxy.InverseF(view_matrix, camera_matrix);
-					
+
 
 		// projection matrix
-		float aspectratio = 0 ;
+		float aspectratio = 0;
 		d3d.GetAspectRatio(aspectratio);
 		projection_matrix = GW::MATH::GIdentityMatrixF;
 		GW::MATH::GMatrix::ProjectionDirectXLHF(1.134f, aspectratio, 0.1f, 100, projection_matrix);
@@ -144,7 +145,7 @@ private:
 
 	void InitializeVertexBuffer(ID3D11Device* creator)
 	{
-		CreateVertexBuffer(creator, levelHandle.levelVertices.data() , sizeof(H2B::VERTEX) * levelHandle.levelVertices.size());
+		CreateVertexBuffer(creator, levelHandle.levelVertices.data(), sizeof(H2B::VERTEX) * levelHandle.levelVertices.size());
 	}
 
 	void CreateVertexBuffer(ID3D11Device* creator, const void* data, unsigned int sizeInBytes)
@@ -171,20 +172,20 @@ private:
 	{
 
 		SceneData scene = scene_Data;
-		CreateConstantBuffer(creator, &scene, sizeof(SceneData), constantMode::scene );
+		CreateConstantBuffer(creator, &scene, sizeof(SceneData), constantMode::scene);
 		MeshData mesh = mesh_Data;
 		CreateConstantBuffer(creator, &scene, sizeof(MeshData), constantMode::mesh);
 
 	}
 
-	void CreateConstantBuffer(ID3D11Device* creator, const void* data, unsigned int sizeInBytes , constantMode mode)
+	void CreateConstantBuffer(ID3D11Device* creator, const void* data, unsigned int sizeInBytes, constantMode mode)
 	{
 		D3D11_SUBRESOURCE_DATA bData = { data, 0, 0 };
-		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_CONSTANT_BUFFER,D3D11_USAGE_DYNAMIC,D3D11_CPU_ACCESS_WRITE);
-	 	APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, constantbuffer[(int)mode].GetAddressOf());
+		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_CONSTANT_BUFFER, D3D11_USAGE_DYNAMIC, D3D11_CPU_ACCESS_WRITE);
+		APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, constantbuffer[(int)mode].GetAddressOf());
 	}
 
-	
+
 
 	void InitializePipeline(ID3D11Device* creator)
 	{
@@ -291,40 +292,43 @@ private:
 public:
 	void Render()
 	{
-		
+
 		PipelineHandles curHandles = GetCurrentPipelineHandles();
 		SetUpPipeline(curHandles);
-		
+
 		for (size_t i = 0; i < levelHandle.levelModels.size(); i++)
 		{
-			for (size_t j = 0; j < levelHandle.levelMeshes.size(); j++)
+			for (size_t j = 0; j < levelHandle.levelModels[i].meshCount; j++)
 			{
 				D3D11_MAPPED_SUBRESOURCE GPUbuffer;
-				curHandles.context->Map(constantbuffer[mesh].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
+				HRESULT Result = curHandles.context->Map(constantbuffer[mesh].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
 				//*((GW::MATH::GMATRIXF*)(GPUbuffer.pData)) = gridMatrices[i];
 				//matrixProxy--->IdentityF(mesh_Data.worldMatrix); // change world matrix each here
-				mesh_Data.material.attrib = levelHandle.levelMaterials[levelHandle.levelMeshes[j].materialIndex].attrib;
-				memcpy(GPUbuffer.pData, constantbuffer[mesh].GetAddressOf(), sizeof(constantbuffer[mesh]));
+				mesh_Data.material = levelHandle.levelMaterials[levelHandle.levelMeshes[j].materialIndex].attrib ;
+				memcpy(GPUbuffer.pData, &mesh_Data, sizeof(mesh_Data));
 				curHandles.context->Unmap(constantbuffer[mesh].Get(), 0);
-				curHandles.context->DrawIndexedInstanced(levelHandle.levelMeshes[j].drawInfo.indexCount, levelHandle.levelMeshes[j].drawInfo.indexOffset, 0);
+
+				//curHandles.context->DrawIndexedInstanced()
+				curHandles.context->DrawIndexed(levelHandle.levelMeshes[j].drawInfo.indexCount, levelHandle.levelMeshes[j].drawInfo.indexOffset, 0);
 			}
-		}
 			
-		
-		
-		
+		}
+
+
+
+
 		ReleasePipelineHandles(curHandles);
 
-		
+
 	}
 
 	void UpdateCamera()
 	{
-		
+
 		timer.Signal();
 		deltatime = timer.Delta();
-		float camera_speed = 0.3f;
 
+		float camera_speed = 0.3f;
 		float perframeSpeed = camera_speed * deltatime;
 
 		// up down
@@ -334,12 +338,12 @@ public:
 		GinputProxy.GetState(G_KEY_LEFTSHIFT, shift_state);
 		if (space_state == 1 || shift_state == 1)
 		{
-			
+
 			float total_y_change = space_state - shift_state;
 			camera_matrix.row4.y += total_y_change * perframeSpeed;
-			
+
 		}
-		
+
 		//forward backward
 		float w_state = 0;
 		float s_state = 0;
@@ -353,17 +357,17 @@ public:
 		GinputProxy.GetState(G_KEY_D, d_state);
 
 
-		if (w_state == 1 || s_state == 1 || a_state|| d_state)
+		if (w_state == 1 || s_state == 1 || a_state || d_state)
 		{
 			float total_z_change = w_state - s_state;
 			float total_x_change = d_state - a_state;
 
-			GW::MATH::GMATRIXF temp = GW::MATH::GIdentityMatrixF; 
+			GW::MATH::GMATRIXF temp = GW::MATH::GIdentityMatrixF;
 			GW::MATH::GVECTORF v = { total_x_change * perframeSpeed, 0, total_z_change * perframeSpeed ,0 };
 			GW::MATH::GMatrix::TranslateGlobalF(temp, v, temp);
 			matrixProxy.MultiplyMatrixF(temp, camera_matrix, camera_matrix);
 		}
-		
+
 
 		//////mouse rotate up and down
 		float ydelta = 0;
@@ -379,14 +383,14 @@ public:
 		float rotateSpeed = 3.14f * deltatime * 7;
 
 		float total_pitch = 1.134f * ydelta / windowHeight * rotateSpeed;
-							//(fov in radian)
+		//(fov in radian)
 
 		{
 			GW::MATH::GMATRIXF temp = GW::MATH::GIdentityMatrixF;
 			matrixProxy.RotateXGlobalF(temp, total_pitch, temp);
 			matrixProxy.MultiplyMatrixF(temp, camera_matrix, camera_matrix);
 		}
-		
+
 		////////////mouse left and right
 
 		{
@@ -400,12 +404,12 @@ public:
 			matrixProxy.MultiplyMatrixF(camera_matrix, temp, camera_matrix);
 
 		}
-		
+
 
 		matrixProxy.InverseF(camera_matrix, scene_Data.viewMatrix);
 	}
 
-	
+
 	// TODO: Part 4C 
 	// TODO: Part 4D 
 	// TODO: Part 4E 
@@ -436,10 +440,10 @@ private:
 		SetShaders(handles);
 		SetIndexBuffers(handles);
 
-		handles.context->VSSetConstantBuffers(0,2, constantbuffer->GetAddressOf());
+		handles.context->VSSetConstantBuffers(0, 2, constantbuffer->GetAddressOf());
 		handles.context->PSSetConstantBuffers(0, 2, constantbuffer->GetAddressOf());
 		handles.context->IASetInputLayout(vertexFormat.Get());
-		handles.context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_LINELIST); //TODO: Part 1B 
+		handles.context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST); 
 	}
 
 	void SetRenderTargets(PipelineHandles handles)

@@ -1,6 +1,6 @@
 // an ultra simple hlsl pixel shader
 
-struct OBJ_ATTRIBUTES
+struct ATTRIBUTES
 {
     float3 Kd; // diffuse reflectivity
     float d; // dissolve (transparency) 
@@ -25,7 +25,7 @@ cbuffer SceneBuffer : register(b0)
 cbuffer MeshBuffer : register(b1)
 {
     float4x4 world_matrix;
-    OBJ_ATTRIBUTES obj_attributes;
+    ATTRIBUTES attributes;
 };
 
 
@@ -33,12 +33,12 @@ struct InputVertex
 {
     float4 xyzw : SV_POSITION;
     float3 posW : WORLD;
-    float3 normW : NORMALW;
+    float3 normW: NORMALW;
 };
 
 
 float4 main(InputVertex input) : SV_TARGET
 {
     //return float4(input.normW, 1);
-    return float4(obj_attributes.Kd, 0); 
+    return float4(attributes.Kd, 0); 
 }

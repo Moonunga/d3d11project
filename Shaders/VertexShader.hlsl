@@ -6,7 +6,7 @@ struct OutputVertex
 {
     float4 xyzw : SV_POSITION;
     float3 posW : WORLD;
-    float3 normW : NORMALW;
+    float3 normW: NORMALW;
 };
 
 struct InputVertex
@@ -16,7 +16,7 @@ struct InputVertex
     float3 nrm : NORMAL;
 };
 
-struct OBJ_ATTRIBUTES
+struct ATTRIBUTES
 {
     float3 Kd; // diffuse reflectivity
     float d; // dissolve (transparency) 
@@ -42,7 +42,7 @@ cbuffer SceneBuffer : register(b0)
 cbuffer MeshBuffer : register(b1)
 {
     float4x4 world_matrix;
-    OBJ_ATTRIBUTES obj_attributes;
+    ATTRIBUTES attributes;
 };
 
 OutputVertex main(InputVertex input)
