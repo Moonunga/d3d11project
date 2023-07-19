@@ -29,6 +29,12 @@ using namespace GRAPHICS;
 int main()
 {
 
+	GW::SYSTEM::GLog log; // handy for logging any messages/warning/errors
+	// begin loading level
+	log.Create("../LevelLoaderLog.txt");
+	log.EnableConsoleLogging(true); // mirror output to the console
+	log.Log("Start Program.");
+
 	GWindow win;
 	GEventResponder msgs;
 	GDirectX11Surface d3d11;
@@ -45,8 +51,7 @@ int main()
 		win.Register(msgs);
 		if (+d3d11.Create(win, GW::GRAPHICS::DEPTH_BUFFER_SUPPORT))
 		{
-			// instantiate and load level data for use by renderer
-			GLog log; log.Create("logOutput2.txt");
+
 			Level_Data myLevel;
 			bool result = myLevel.LoadLevel("../GameLevel2.txt","../Models2",log); // gives me true
 

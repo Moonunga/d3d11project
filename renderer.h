@@ -14,7 +14,8 @@ void PrintLabeledDebugString(const char* label, const char* toPrint)
 enum constantMode
 {
 	scene,
-	mesh
+	mesh,
+	objectID
 };
 
 
@@ -26,8 +27,16 @@ struct SceneData
 
 struct MeshData
 {
-	GW::MATH::GMATRIXF worldMatrix;
-	H2B::ATTRIBUTES material;
+	GW::MATH::GMATRIXF worldMatrix[200];
+	H2B::ATTRIBUTES material[200];
+};
+
+struct ObjectID
+{
+	int modelID;
+	int materialID;
+	int dummy1;
+	int dummy2;
 };
 
 class Renderer
@@ -43,7 +52,7 @@ class Renderer
 	Microsoft::WRL::ComPtr<ID3D11PixelShader>	pixelShader;
 	Microsoft::WRL::ComPtr<ID3D11InputLayout>	vertexFormat;
 	Microsoft::WRL::ComPtr<ID3D11Buffer>		indexBuffer;
-	Microsoft::WRL::ComPtr<ID3D11Buffer>		constantbuffer[2];
+	Microsoft::WRL::ComPtr<ID3D11Buffer>		constantbuffer[3];
 
 
 	GW::MATH::GMATRIXF world_matrix;
@@ -58,8 +67,11 @@ class Renderer
 	GW::INPUT::GInput GinputProxy;
 	GW::INPUT::GController GControllerProxy;
 
+	//constant Buffer Variables
 	SceneData scene_Data;
 	MeshData  mesh_Data;
+	ObjectID  object_ID;
+
 	// timer
 	XTime timer;
 	float deltatime;
@@ -78,6 +90,7 @@ public:
 
 		win = _win;
 		d3d = _d3d;
+		d3d = _d3d;
 
 		InitializeMatrix();
 		InitializeSun();
@@ -87,8 +100,20 @@ public:
 		scene_Data.sunColor = sun_Color;
 		scene_Data.sunDirection = sun_Direction;
 
-		mesh_Data.worldMatrix = world_matrix;
-		//mesh_Data.material = FSLogo_materials[0].attrib;
+		for (size_t i = 0; i < levelHandle.levelTransforms.size(); i++)
+		{
+			mesh_Data.worldMatrix[i] = levelHandle.levelTransforms[i];
+			
+		}
+
+		for (size_t i = 0; i < levelHandle.levelMaterials.size(); i++)
+		{
+			mesh_Data.material[i] = levelHandle.levelMaterials[i].attrib;
+		}
+
+		
+		object_ID.modelID = 0;
+		object_ID.materialID = 0;
 
 		InitializeGraphics();
 	}
@@ -174,7 +199,10 @@ private:
 		SceneData scene = scene_Data;
 		CreateConstantBuffer(creator, &scene, sizeof(SceneData), constantMode::scene);
 		MeshData mesh = mesh_Data;
-		CreateConstantBuffer(creator, &scene, sizeof(MeshData), constantMode::mesh);
+		CreateConstantBuffer(creator, &mesh, sizeof(MeshData), constantMode::mesh);
+		ObjectID obi = object_ID;
+		CreateConstantBuffer(creator, &obi, sizeof(ObjectID), constantMode::objectID);
+
 
 	}
 
@@ -184,7 +212,6 @@ private:
 		CD3D11_BUFFER_DESC bDesc(sizeInBytes, D3D11_BIND_CONSTANT_BUFFER, D3D11_USAGE_DYNAMIC, D3D11_CPU_ACCESS_WRITE);
 		APP_DEPRECATED_HRESULT hr = creator->CreateBuffer(&bDesc, &bData, constantbuffer[(int)mode].GetAddressOf());
 	}
-
 
 
 	void InitializePipeline(ID3D11Device* creator)
@@ -296,20 +323,33 @@ public:
 		PipelineHandles curHandles = GetCurrentPipelineHandles();
 		SetUpPipeline(curHandles);
 
-		for (size_t i = 0; i < levelHandle.levelModels.size(); i++)
-		{
-			for (size_t j = 0; j < levelHandle.levelModels[i].meshCount; j++)
-			{
-				D3D11_MAPPED_SUBRESOURCE GPUbuffer;
-				HRESULT Result = curHandles.context->Map(constantbuffer[mesh].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
-				//*((GW::MATH::GMATRIXF*)(GPUbuffer.pData)) = gridMatrices[i];
-				//matrixProxy--->IdentityF(mesh_Data.worldMatrix); // change world matrix each here
-				mesh_Data.material = levelHandle.levelMaterials[levelHandle.levelMeshes[j].materialIndex].attrib ;
-				memcpy(GPUbuffer.pData, &mesh_Data, sizeof(mesh_Data));
-				curHandles.context->Unmap(constantbuffer[mesh].Get(), 0);
+		D3D11_MAPPED_SUBRESOURCE GPUbuffer;
+		HRESULT Result = curHandles.context->Map(constantbuffer[scene].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
+		memcpy(GPUbuffer.pData, &scene_Data, sizeof(scene_Data));
+		curHandles.context->Unmap(constantbuffer[scene].Get(), 0);
 
-				//curHandles.context->DrawIndexedInstanced()
-				curHandles.context->DrawIndexed(levelHandle.levelMeshes[j].drawInfo.indexCount, levelHandle.levelMeshes[j].drawInfo.indexOffset, 0);
+		for (size_t i = 0; i < levelHandle.levelInstances.size(); i++)
+		{
+			auto model_index = levelHandle.levelInstances[i].modelIndex;
+			auto model = levelHandle.levelModels[model_index];
+			for (size_t j = 0; j < model.meshCount; j++)
+			{
+				auto submesh = levelHandle.levelMeshes[model.meshStart + j];
+				auto instance = levelHandle.levelInstances[i];
+
+				HRESULT Result = curHandles.context->Map(constantbuffer[objectID].Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &GPUbuffer);
+				object_ID.modelID = instance.transformStart;
+				object_ID.materialID = submesh.materialIndex + model.materialStart;
+				memcpy(GPUbuffer.pData, &object_ID, sizeof(object_ID));
+				curHandles.context->Unmap(constantbuffer[objectID].Get(), 0);
+
+
+				curHandles.context->DrawIndexedInstanced(
+					submesh.drawInfo.indexCount
+					, instance.transformCount
+					, model.indexStart + submesh.drawInfo.indexOffset
+					, model.vertexStart 
+					,0);
 			}
 			
 		}
@@ -328,7 +368,7 @@ public:
 		timer.Signal();
 		deltatime = timer.Delta();
 
-		float camera_speed = 0.3f;
+		float camera_speed = 1.0f;
 		float perframeSpeed = camera_speed * deltatime;
 
 		// up down
@@ -403,6 +443,7 @@ public:
 			matrixProxy.RotateYGlobalF(temp, total_yaw, temp);
 			matrixProxy.MultiplyMatrixF(camera_matrix, temp, camera_matrix);
 
+
 		}
 
 
@@ -440,8 +481,8 @@ private:
 		SetShaders(handles);
 		SetIndexBuffers(handles);
 
-		handles.context->VSSetConstantBuffers(0, 2, constantbuffer->GetAddressOf());
-		handles.context->PSSetConstantBuffers(0, 2, constantbuffer->GetAddressOf());
+		handles.context->VSSetConstantBuffers(0, 3, constantbuffer->GetAddressOf());
+		handles.context->PSSetConstantBuffers(0, 3, constantbuffer->GetAddressOf());
 		handles.context->IASetInputLayout(vertexFormat.Get());
 		handles.context->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST); 
 	}

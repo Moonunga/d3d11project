@@ -16,6 +16,8 @@ struct InputVertex
     float3 nrm : NORMAL;
 };
 
+
+
 struct ATTRIBUTES
 {
     float3 Kd; // diffuse reflectivity
@@ -41,21 +43,31 @@ cbuffer SceneBuffer : register(b0)
 
 cbuffer MeshBuffer : register(b1)
 {
-    float4x4 world_matrix;
-    ATTRIBUTES attributes;
+    float4x4 world_matrix[200];
+    ATTRIBUTES attributes[200];
 };
 
-OutputVertex main(InputVertex input)
+cbuffer ObjectID : register(b2)
+{
+    int model_id;
+    int material_id;
+    int dummy1;
+    int dummy2;
+};
+
+
+
+OutputVertex main(InputVertex input, uint instanceId : SV_InstanceID  )
 {
     OutputVertex output = (OutputVertex) 0;
     output.xyzw = float4(input.xyz, 1);
     
-    output.xyzw = mul(output.xyzw, world_matrix);
+    output.xyzw = mul(output.xyzw, world_matrix[ model_id + instanceId]);
     output.posW = output.xyzw.xyz;
     output.xyzw = mul(output.xyzw, view_matrix);
     output.xyzw = mul(output.xyzw, projection_matrix);
     
-    output.normW = mul(input.nrm, (float3x3) (world_matrix));
+    //output.normW = mul(input.nrm, (float3x3) (world_matrix[instanceId]));
     
     return output;
 }

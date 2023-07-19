@@ -24,8 +24,16 @@ cbuffer SceneBuffer : register(b0)
 
 cbuffer MeshBuffer : register(b1)
 {
-    float4x4 world_matrix;
-    ATTRIBUTES attributes;
+    float4x4 world_matrix[200];
+    ATTRIBUTES attributes[200];
+};
+
+cbuffer ObjectID : register(b2)
+{
+    int model_id;
+    int material_id;
+    int dummy1;
+    int dummy2;
 };
 
 
@@ -40,5 +48,5 @@ struct InputVertex
 float4 main(InputVertex input) : SV_TARGET
 {
     //return float4(input.normW, 1);
-    return float4(attributes.Kd, 0); 
+    return float4(attributes[material_id].Kd, 0);
 }
